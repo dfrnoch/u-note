@@ -18,7 +18,7 @@ import { FiArrowLeft } from "react-icons/fi";
 import { VscAdd, VscFile, VscFiles } from "react-icons/vsc";
 import { keyframes, styled } from "theme";
 import { FsElement } from "types";
-import { useDebouncedCallback } from "use-debounce/lib";
+import { useDebouncedCallback } from "use-debounce";
 import { orderWith } from "utils";
 import { DraggableList } from "./DraggableList";
 import { FileItem } from "./FileItem";

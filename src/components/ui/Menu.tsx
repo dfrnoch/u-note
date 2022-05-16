@@ -33,7 +33,7 @@ export const Item = styled(DropdownMenu.Item, {
   },
 });
 
-export const Menu = DropdownMenu.Root;
+export const Menu: any = DropdownMenu.Root;
 export const Trigger = styled(DropdownMenu.Trigger, {
   cursor: "pointer",
   padding: 0,

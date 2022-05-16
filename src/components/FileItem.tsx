@@ -104,7 +104,7 @@ export const FileItem: FC<{
   const onValidateInput = (value: string) => {
     onChangeName?.(value, path);
   };
-  const autoFocus = useCallback((el) => {
+  const autoFocus = useCallback((el: any) => {
     setTimeout(() => el?.focus(), 10);
   }, []);
 
