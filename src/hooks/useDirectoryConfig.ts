@@ -1,6 +1,6 @@
 import { readTextFile, writeFile } from "@tauri-apps/api/fs";
 import { useEffect, useState } from "react";
-import { useDebouncedCallback } from "use-debounce/lib";
+import { useDebouncedCallback } from "use-debounce";
 
 type Config = {
   customOrder: string[];
