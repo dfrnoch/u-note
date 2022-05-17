@@ -2,6 +2,7 @@ import { styled } from "../../theme";
 import * as RadixTooltip from "@radix-ui/react-tooltip";
 import { FC, ReactNode } from "react";
 
+//REMOVE IG
 const StyledContent = styled(RadixTooltip.Content, {
   borderRadius: 1,
   fontSize: 14,
