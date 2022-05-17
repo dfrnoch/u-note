@@ -28,7 +28,7 @@ const AppContainer = styled(Box, {
   minHeight: "100vh",
   boxSizing: "border-box",
   display: "flex",
-  flexDirection: "column", 
+  flexDirection: "column",
 });
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
 
   const filePaths = useStore((s) => s.currentFilePaths);
   const showSide = useStore((s) => s.showSide);
-  const showInfo = useStore((s) => s.showInfo); 
+  const showInfo = useStore((s) => s.showInfo);
   const scrollMode = useStore((s) => s.scrollMode);
   const set = useStore((s) => s.set);
 
@@ -84,7 +84,14 @@ function App() {
             }}
           >
             <ScrollArea id="main-scroll">
-              <div style={{ padding: 20, margin: "0 auto", minHeight: "100%", position: "relative" }}>
+              <div
+                style={{
+                  padding: 20,
+                  margin: "0 auto",
+                  minHeight: "100%",
+                  position: "relative",
+                }}
+              >
                 {filePaths?.map((path, index) => (
                   <>
                     {index !== 0 && (

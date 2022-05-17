@@ -12,7 +12,7 @@ import { useDirectoryConfig } from "../hooks/useDirectoryConfig";
 import { useDirectoryWatch } from "../hooks/useDirectoryWatch";
 import { keyBy } from "lodash";
 // import { basename, dirname, join  } from "path";
-import * as pathExt from 'path';
+import * as pathExt from "path";
 import { FC, useCallback, useEffect, useState } from "react";
 import { useDrop } from "react-dnd";
 import { FiArrowLeft } from "react-icons/fi";
@@ -87,7 +87,6 @@ export const SideBar: FC = () => {
 
   console.log(filePaths);
 
-
   const onLoadDir = async (path?: string) => {
     if (!path) return;
     console.log("Reloading " + path);
@@ -136,7 +135,7 @@ export const SideBar: FC = () => {
 
     if (type === "file") {
       const path = pathExt.join(directoryPath, name);
-      
+
       await writeFile({
         contents: "",
         path,
@@ -150,10 +149,7 @@ export const SideBar: FC = () => {
     }
   };
 
-  const onDelete = async (
-    path: string,
-    type: "file" | "folder" = "file"
-  ) => {
+  const onDelete = async (path: string, type: "file" | "folder" = "file") => {
     if (type === "file") {
       await removeFile(path);
       if (filePaths.includes(path))
@@ -183,7 +179,8 @@ export const SideBar: FC = () => {
   };
 
   const onSelect = (path: string, type: "file" | "folder") => {
-    if (type === "file") set({ currentFilePaths: [path], currentFilePath: path, });
+    if (type === "file")
+      set({ currentFilePaths: [path], currentFilePath: path });
     if (type === "folder") set({ currentDirectoryPath: path });
   };
   const onMultiSelect = async (path: string, type: "file" | "folder") => {
@@ -196,10 +193,10 @@ export const SideBar: FC = () => {
         currentFilePaths: filePaths.filter((p) => p !== path),
       });
   };
-  const [_, drop] = useDrop({ 
+  const [_, drop] = useDrop({
     accept: "file",
     drop: async (item: any) => {
-      const path = item.id; 
+      const path = item.id;
       await onMove(path, pathExt.dirname(directoryPath));
     },
   });
@@ -248,7 +245,7 @@ export const SideBar: FC = () => {
             <Content>
               <Item onSelect={() => set({ showAddItem: "file" })}>
                 <ItemIcon as={VscFile} />
-                Add file 
+                Add file
               </Item>
               <Item onSelect={() => set({ showAddItem: "folder" })}>
                 <ItemIcon as={VscFiles} />

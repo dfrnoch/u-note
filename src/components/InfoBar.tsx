@@ -12,7 +12,7 @@ const InfoBarStyled = styled("div", {
   height: "100%",
   paddingTop: 30,
   animation: `.1s ${Side}`,
-  color: "white" 
+  color: "white",
 });
 
 const Section = styled("div", {
@@ -37,7 +37,6 @@ export const InfoBar = () => {
   const paths = useStore((s) => s.currentFilePaths);
   const content = "";
   const cc = content.length;
-
 
   return (
     <InfoBarStyled>

@@ -1,7 +1,6 @@
 import { FC, ReactNode } from "react";
 import { DraggableItem } from "./Element";
 
-
 export const DraggableList: FC<{
   forType: string;
   elements: any[];
@@ -15,7 +14,6 @@ export const DraggableList: FC<{
     without.splice(pos, 0, el);
     onSortChange?.(without);
   };
-
 
   return (
     <div>

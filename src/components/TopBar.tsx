@@ -58,6 +58,8 @@ export const TopBar: FC = () => {
   const { openFile, openDir } = useFs();
 
   let title = "Codio";
+  //remove window borders
+  appWindow.setDecorations(false);
 
   return (
     <TopBarContainer className="titlebar" data-tauri-drag-region="">

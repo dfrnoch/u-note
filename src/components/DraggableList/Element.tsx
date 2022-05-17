@@ -1,9 +1,4 @@
-import {
-  FC,
-  ReactNode,
-  useRef,
-  useState,
-} from "react";
+import { FC, ReactNode, useRef, useState } from "react";
 import { DropTargetMonitor, useDrag, useDrop, XYCoord } from "react-dnd";
 import { styled } from "../../theme";
 
@@ -29,16 +24,7 @@ export const DraggableItem: FC<{
   combine?: (fromId: string, toId: string) => void;
   render: (element: any, handle?: any) => ReactNode;
   element: any;
-}> = ({
-  type,
-  index,
-  id,
-  move,
-  canCombine,
-  combine,
-  render,
-  element,
-}) => {
+}> = ({ type, index, id, move, canCombine, combine, render, element }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isTargeted, setIsTargeted] = useState(false);
 
