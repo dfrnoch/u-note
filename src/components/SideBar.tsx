@@ -7,19 +7,19 @@ import {
   writeFile,
 } from "@tauri-apps/api/fs";
 import { invoke } from "@tauri-apps/api/tauri";
-import { useStore } from "hooks/store";
-import { useDirectoryConfig } from "hooks/useDirectoryConfig";
-import { useDirectoryWatch } from "hooks/useDirectoryWatch";
+import { useStore } from "../hooks/store";
+import { useDirectoryConfig } from "../hooks/useDirectoryConfig";
+import { useDirectoryWatch } from "../hooks/useDirectoryWatch";
 import { keyBy } from "lodash";
 import { basename, dirname, join  } from "path";
 import { FC, useCallback, useEffect, useState } from "react";
 import { useDrop } from "react-dnd";
 import { FiArrowLeft } from "react-icons/fi";
 import { VscAdd, VscFile, VscFiles } from "react-icons/vsc";
-import { keyframes, styled } from "theme";
+import { keyframes, styled } from "../theme";
 import { FsElement } from "types";
 import { useDebouncedCallback } from "use-debounce";
-import { orderWith } from "utils";
+import { orderWith } from "../utils";
 import { DraggableList } from "./DraggableList";
 import { FileItem } from "./FileItem";
 import { Content, Item, ItemIcon, Menu, Trigger } from "./ui/Menu";

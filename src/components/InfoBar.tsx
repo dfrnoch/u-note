@@ -1,5 +1,5 @@
-import { useStore } from "hooks/store";
-import { keyframes, styled } from "theme";
+import { useStore } from "../hooks/store";
+import { keyframes, styled } from "../theme";
 
 const Side = keyframes({
   "0%": { transform: "translateX(50px)", opacity: 0 },

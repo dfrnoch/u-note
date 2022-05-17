@@ -1,7 +1,7 @@
 import { writeFile } from "@tauri-apps/api/fs";
 import { invoke } from "@tauri-apps/api/tauri";
 import { FC, useEffect, useState } from "react";
-import { File } from "types";
+import { File } from "../types";
 import { Editor } from "./Editor";
 
 export const FileEditor: FC<{ path: string }> = ({ path }) => {

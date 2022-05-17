@@ -1,4 +1,4 @@
-import { keyframes, styled } from "theme";
+import { keyframes, styled } from "../../theme";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 
 const scaleIn = keyframes({

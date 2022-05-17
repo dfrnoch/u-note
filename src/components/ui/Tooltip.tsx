@@ -1,4 +1,4 @@
-import { styled } from "theme";
+import { styled } from "../../theme";
 import * as RadixTooltip from "@radix-ui/react-tooltip";
 import { FC, ReactNode } from "react";
 

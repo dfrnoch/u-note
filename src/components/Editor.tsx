@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import { basename, extname } from "path";
-import { useStore } from "hooks/store";
+import { useStore } from "../hooks/store";
 
 
 

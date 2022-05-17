@@ -243,6 +243,21 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
+"@fontsource/inconsolata@^4.5.6":
+  version "4.5.6"
+  resolved "https://registry.yarnpkg.com/@fontsource/inconsolata/-/inconsolata-4.5.6.tgz#02fd076e9fc8eb8dbb4dbc70cb70031ef0e5ab32"
+  integrity sha512-aZH9zF9iEI6xS1xnYg7IKcGpkYRxAEiKc1239Dqdij488TDtI7uwdPSafgBFvVcbdLaIpYQdeBxrxxZH5ntemA==
+
+"@fontsource/merriweather@^4.5.11":
+  version "4.5.11"
+  resolved "https://registry.yarnpkg.com/@fontsource/merriweather/-/merriweather-4.5.11.tgz#83336e4fe0af0cb872ed23d9e49bab3948a8797a"
+  integrity sha512-lhpcHRyxrnV7yIPA+2FD4rfYWQcbxV+lDirx5VHq4/505g823TlscONA7hDaBWZ8wN3LyGF6N6EYekaYIdeePg==
+
+"@fontsource/montserrat@^4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/montserrat/-/montserrat-4.5.10.tgz#0dc94425c575c785c2ac92d244c543bfbb005080"
+  integrity sha512-JXe9wURwLFtPfrD3yYnfvue/Uv2L1iSEor4w6M5CcGO4iWSoaFgk7BPLUwksGD7ChKpGKpaNNLUt67VlCu2A1g==
+
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.1.1.tgz#e5d2e450306a9491e3bd77e323e38d7aff315996"

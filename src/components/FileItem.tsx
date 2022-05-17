@@ -1,5 +1,4 @@
 import { FC, FocusEvent, KeyboardEvent, useCallback, useState } from "react";
-import { removeExt } from "../utils";
 import { GrDrag } from "react-icons/gr";
 import {
   VscEdit,
@@ -8,7 +7,7 @@ import {
   VscKebabVertical,
   VscTrash,
 } from "react-icons/vsc";
-import { styled } from "theme";
+import { styled } from "../theme";
 import { Icon } from "./ui/Icon";
 import { Content, Item, ItemIcon, Menu, Trigger } from "./ui/Menu";
 

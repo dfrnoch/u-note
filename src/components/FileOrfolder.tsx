@@ -1,8 +1,8 @@
-import { Separator } from "components/Separator";
+import { Separator } from "./Separator";
 import { invoke } from "@tauri-apps/api/tauri";
 import { FC, useEffect, useState } from "react";
 import { FileEditor } from "./FileEditor";
-import { useStore } from "hooks/store";
+import { useStore } from "../hooks/store";
 
 export const FileOrfolder: FC<{ path: string }> = ({ path }) => {
   const [type, setType] = useState<"file" | "folder" | undefined>();

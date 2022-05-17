@@ -1,6 +1,6 @@
 import { FC } from "react"; 
 import * as RadixScrollArea from "@radix-ui/react-scroll-area";
-import { styled } from "theme";
+import { styled } from "../../theme";
 
 const Container = styled("div", {
   flex: 1,

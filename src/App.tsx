@@ -1,16 +1,16 @@
-import { InfoBar } from "components/InfoBar";
-import { SideBar } from "components/SideBar";
-import { Box } from "components/ui/Layout";
-import { ScrollArea } from "components/ui/ScrollArea";
-import { useStore } from "hooks/store";
+import { InfoBar } from "./components/InfoBar";
+import { SideBar } from "./components/SideBar";
+import { Box } from "./components/ui/Layout";
+import { ScrollArea } from "./components/ui/ScrollArea";
+import { useStore } from "./hooks/store";
 import { reset } from "stitches-reset";
-import { globalCss, styled } from "theme";
+import { globalCss, styled } from "./theme";
 import "../node_modules/@fontsource/merriweather/latin-300.css";
 import "../node_modules/@fontsource/montserrat";
 import "../node_modules/@fontsource/inconsolata";
 import { TopBar } from "./components/TopBar";
-import { FileOrfolder } from "components/FileOrfolder";
-import { Separator } from "components/Separator";
+import { FileOrfolder } from "./components/FileOrfolder";
+import { Separator } from "./components/Separator";
 
 const globalStyles = globalCss(reset);
 const globalStylesExtension = globalCss({

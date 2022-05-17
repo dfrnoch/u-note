@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { css, styled } from "theme";
+import { css, styled } from "../../theme";
 
 export type BoxProps = {
   style?: any;

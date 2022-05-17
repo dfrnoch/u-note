@@ -1,6 +1,6 @@
 import { appWindow } from "@tauri-apps/api/window";
-import { useStore } from "hooks/store";
-import { useFs } from "hooks/useFs";
+import { useStore } from "../hooks/store";
+import { useFs } from "../hooks/useFs";
 import { FC } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FiSidebar } from "react-icons/fi";
@@ -13,7 +13,7 @@ import {
   VscInfo,
 } from "react-icons/vsc";
 import { WiMoonFull } from "react-icons/wi";
-import { styled } from "theme";
+import { styled } from "../theme";
 import { Content, Item, ItemIcon, Menu, Trigger } from "./ui/Menu";
 import { Tooltip } from "./ui/Tooltip";
 
@@ -51,10 +51,10 @@ const TopIconRight = styled(TopIconLeft, {
 });
 
 export const TopBar: FC = () => {
-  const showSide = useStore((s) => s.showSide);
-  const showInfo = useStore((s) => s.showInfo);
-  const topbarStyle = useStore((s) => s.topbarStyle);
-  const set = useStore((s) => s.set);
+  const showSide = useStore((s: any) => s.showSide);
+  const showInfo = useStore((s: any) => s.showInfo);
+  const topbarStyle = useStore((s: any) => s.topbarStyle);
+  const set = useStore((s: any) => s.set);
   const { openFile, openDir } = useFs();
 
   let title = "Codio";

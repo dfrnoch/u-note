@@ -5,7 +5,7 @@ import {
   useState,
 } from "react";
 import { DropTargetMonitor, useDrag, useDrop, XYCoord } from "react-dnd";
-import { styled } from "theme";
+import { styled } from "../../theme";
 
 const DropOver = styled("div", {
   position: "absolute",
