@@ -166,6 +166,7 @@ fn main() -> notify::Result<()> {
                 notify::recommended_watcher(move |res: Result<notify::Event, notify::Error>| {
                     match res {
                         Ok(event) => {
+                            println!("{:?}", event);
                             handle
                                 .emit_all(
                                     "file_changed",

@@ -11,7 +11,8 @@ import { useStore } from "../hooks/store";
 import { useDirectoryConfig } from "../hooks/useDirectoryConfig";
 import { useDirectoryWatch } from "../hooks/useDirectoryWatch";
 import { keyBy } from "lodash";
-import { basename, dirname, join  } from "path";
+// import { basename, dirname, join  } from "path";
+import * as pathExt from 'path';
 import { FC, useCallback, useEffect, useState } from "react";
 import { useDrop } from "react-dnd";
 import { FiArrowLeft } from "react-icons/fi";
@@ -124,8 +125,8 @@ export const SideBar: FC = () => {
   };
 
   const onMove = async (from: string, pathTo: string) => {
-    const name = basename(from);
-    const to = join(pathTo, name);
+    const name = pathExt.basename(from);
+    const to = pathExt.join(pathTo, name);
     await copyFile(from, to);
     await removeFile(from);
   };
@@ -134,7 +135,7 @@ export const SideBar: FC = () => {
     const type = showAddItem;
 
     if (type === "file") {
-      const path = join(directoryPath, name);
+      const path = pathExt.join(directoryPath, name);
       
       await writeFile({
         contents: "",
@@ -144,7 +145,7 @@ export const SideBar: FC = () => {
     }
 
     if (type === "folder") {
-      await createDir(join(directoryPath, name));
+      await createDir(pathExt.join(directoryPath, name));
       set({ showAddItem: false });
     }
   };
@@ -164,8 +165,8 @@ export const SideBar: FC = () => {
   };
 
   const onRename = async (name: string, path: string) => {
-    const newPath = join(dirname(path), name);
-    await renameFile(path, join(dirname(path), name));
+    const newPath = pathExt.join(pathExt.dirname(path), name);
+    await renameFile(path, pathExt.join(pathExt.dirname(path), name));
     // update present selected document
     if (filePaths.includes(path))
       set({
@@ -199,7 +200,7 @@ export const SideBar: FC = () => {
     accept: "file",
     drop: async (item: any) => {
       const path = item.id; 
-      await onMove(path, dirname(directoryPath));
+      await onMove(path, pathExt.dirname(directoryPath));
     },
   });
 
@@ -223,13 +224,13 @@ export const SideBar: FC = () => {
               cursor: "pointer",
             }}
             onClick={() => {
-              set({ currentDirectoryPath: dirname(directoryPath) });
+              set({ currentDirectoryPath: pathExt.dirname(directoryPath) });
             }}
           >
             <FiArrowLeft />
           </div>
         )}
-        <div>{basename(directoryPath)}</div>
+        <div>{pathExt.basename(directoryPath)}</div>
         <div
           style={{
             position: "absolute",
@@ -237,7 +238,7 @@ export const SideBar: FC = () => {
             cursor: "pointer",
           }}
           onClick={() => {
-            set({ currentDirectoryPath: dirname(directoryPath) });
+            set({ currentDirectoryPath: pathExt.dirname(directoryPath) });
           }}
         >
           <Menu>
