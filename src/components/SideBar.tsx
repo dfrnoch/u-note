@@ -83,7 +83,6 @@ export const SideBar: FC = () => {
     ...fileListWithPathAndId.filter((f) => !customOrder.includes(f.path)),
   ];
 
-  console.log(filePaths);
 
   const onLoadDir = async (path?: string) => {
     if (!path) return;
