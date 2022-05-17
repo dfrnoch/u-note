@@ -3,6 +3,7 @@ import { css, styled } from "theme";
 
 export type BoxProps = {
   style?: any;
+  children?: any;
 
   padding?: number | string;
   pointer?: string;

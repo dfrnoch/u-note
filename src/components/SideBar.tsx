@@ -11,7 +11,7 @@ import { useStore } from "hooks/store";
 import { useDirectoryConfig } from "hooks/useDirectoryConfig";
 import { useDirectoryWatch } from "hooks/useDirectoryWatch";
 import { keyBy } from "lodash";
-import { basename, dirname, join, extname } from "path";
+import { basename, dirname, join  } from "path";
 import { FC, useCallback, useEffect, useState } from "react";
 import { useDrop } from "react-dnd";
 import { FiArrowLeft } from "react-icons/fi";

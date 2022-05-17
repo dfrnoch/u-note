@@ -12,12 +12,12 @@ const StyledContent = styled(RadixTooltip.Content, {
 
 
 
-export const Tooltip: FC<{ label: ReactNode | string }> = ({
+export const Tooltip: FC<{ label: ReactNode | string, children: any }> = ({
   label,
   children,
 }) => (
   <RadixTooltip.Root>
-    <RadixTooltip.Trigger as="div">{children}</RadixTooltip.Trigger>
+    <RadixTooltip.Trigger >{children}</RadixTooltip.Trigger>
     <StyledContent align="center">{label}</StyledContent>
   </RadixTooltip.Root>
 );

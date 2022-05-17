@@ -1,18 +1,22 @@
-import { createCss } from "@stitches/react";
+import { createStitches } from "@stitches/react";
 
-export const { styled, css, global, keyframes } = createCss({
+export const { styled, css, keyframes, globalCss } = createStitches({
   utils: {
-    mb: (c) => (v) => ({
-      marginBottom: v,
-    }),
-    mr: (c) => (v) => ({
-      marginRight: v,
-    }),
-    mt: (c) => (v) => ({
-      marginTop: v,
-    }),
-    ml: (c) => (v) => ({
-      marginLeft: v,
-    }),
+    mb: (c: any) =>
+      (v: any) => ({
+        marginBottom: v,
+      }),
+    mr: (c: any) =>
+      (v: any) => ({
+        marginRight: v,
+      }),
+    mt: (c: any) =>
+      (v: any) => ({
+        marginTop: v,
+      }),
+    ml: (c: any) =>
+      (v: any) => ({
+        marginLeft: v,
+      }),
   },
 });

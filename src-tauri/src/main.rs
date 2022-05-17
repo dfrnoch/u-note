@@ -187,7 +187,7 @@ fn main() -> notify::Result<()> {
             watch,
             unwatch,
             list_path_deep,
-            is_dir 
+            is_dir
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
