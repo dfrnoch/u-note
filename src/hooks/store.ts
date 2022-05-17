@@ -9,7 +9,6 @@ export const useStore = create(
         currentFilePaths: [] as string[],
         currentProjectPath: "",
         currentDirectoryPath: "",
-        currentFilePath: "",
 
         showSide: false,
         showInfo: false,

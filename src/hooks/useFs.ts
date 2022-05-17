@@ -1,6 +1,7 @@
 import { open } from "@tauri-apps/api/dialog";
 import { useStore } from "./store";
 
+//useFs is a custom hook that allows for the opening of directories and files.
 export const useFs = () => {
   const set = useStore((s) => s.set);
   const currentDirectoryPath = useStore((s) => s.currentDirectoryPath);
@@ -12,6 +13,7 @@ export const useFs = () => {
     })) as string;
     set({ currentProjectPath: path, currentDirectoryPath: path });
   };
+  
   const openFile = async () => {
     const path = (await open({
       multiple: false,

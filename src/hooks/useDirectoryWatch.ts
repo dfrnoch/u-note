@@ -2,6 +2,8 @@ import { listen } from "@tauri-apps/api/event";
 import { invoke } from "@tauri-apps/api/tauri";
 import { useEffect } from "react";
 
+
+//Watches the given directory for changes and invokes the callback function whenever a change is detected.
 export const useDirectoryWatch = (path: string, cb: (path: string) => void) => {
   useEffect(() => {
     if (!path) return;

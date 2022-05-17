@@ -10,6 +10,7 @@ const defaultConfig: Config = {
   customOrder: [],
 };
 
+//loads a file from a directory and sets the config for that directory.
 export const useDirectoryConfig = (path: string) => {
   const [config, setConfigRaw] = useState<Config>(defaultConfig);
   const writeDebounce = useDebouncedCallback(
@@ -26,12 +27,12 @@ export const useDirectoryConfig = (path: string) => {
     writeDebounce(path + "/.codio", JSON.stringify(newConfig));
     setConfigRaw(newConfig);
   };
-
+  // Loads the config for the given directory.
   useEffect(() => {
     if (!path) return;
     readTextFile(path + "/.codio")
       .then((textConfig) => setConfigRaw(JSON.parse(textConfig)))
-      .catch((err) =>
+      .catch((_err) =>
         console.log("Could not read the directory config for " + path)
       );
   }, [path]);

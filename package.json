@@ -8,7 +8,6 @@
     "@fontsource/montserrat": "^4.5.10",
     "@radix-ui/react-dropdown-menu": "^0.1.6",
     "@radix-ui/react-scroll-area": "^0.1.4",
-    "@radix-ui/react-tooltip": "^0.1.7",
     "@stitches/react": "^1.2.8",
     "@tauri-apps/api": "1.0.0-rc.5",
     "@uiw/react-textarea-code-editor": "^2.0.2",

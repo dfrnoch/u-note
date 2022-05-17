@@ -179,8 +179,7 @@ export const SideBar: FC = () => {
   };
 
   const onSelect = (path: string, type: "file" | "folder") => {
-    if (type === "file")
-      set({ currentFilePaths: [path], currentFilePath: path });
+    if (type === "file") set({ currentFilePaths: [path] });
     if (type === "folder") set({ currentDirectoryPath: path });
   };
   const onMultiSelect = async (path: string, type: "file" | "folder") => {

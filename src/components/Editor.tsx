@@ -12,6 +12,7 @@ type EditorProps = {
 export const Editor: FC<EditorProps> = ({ onSave, initialValue = "" }) => {
   const filePaths = useStore((s) => s.currentFilePaths);
   const ext = pathExt.extname(filePaths[0]).slice(1);
+  console.log(ext);
 
   const [state, setState] = useState(initialValue);
 
