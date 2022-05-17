@@ -8,7 +8,9 @@ export const useDirectoryWatch = (path: string, cb: (path: string) => void) => {
   useEffect(() => {
     if (!path) return;
     invoke("watch", { path });
+    console.log("watching" + path);
     return () => {
+      console.log("unwatch");
       invoke("unwatch", { path });
     };
   }, [path]);
@@ -18,6 +20,7 @@ export const useDirectoryWatch = (path: string, cb: (path: string) => void) => {
 
     let stop: any;
     listen<string>("file_changed", (event) => {
+      console.log("payload change")
       cb(event.payload);
     }).then((fn) => {
       stop = fn;

@@ -11,8 +11,6 @@ import { useStore } from "../hooks/store";
 import { useDirectoryConfig } from "../hooks/useDirectoryConfig";
 import { useDirectoryWatch } from "../hooks/useDirectoryWatch";
 import { keyBy } from "lodash";
-// import { basename, dirname, join  } from "path";
-import * as pathExt from "path";
 import { FC, useCallback, useEffect, useState } from "react";
 import { useDrop } from "react-dnd";
 import { FiArrowLeft } from "react-icons/fi";
@@ -20,7 +18,7 @@ import { VscAdd, VscFile, VscFiles } from "react-icons/vsc";
 import { keyframes, styled } from "../theme";
 import { FsElement } from "types";
 import { useDebouncedCallback } from "use-debounce";
-import { orderWith } from "../utils";
+import { orderWith, basename, join, dirname } from "../utils";
 import { DraggableList } from "./DraggableList";
 import { FileItem } from "./FileItem";
 import { Content, Item, ItemIcon, Menu, Trigger } from "./ui/Menu";
@@ -124,8 +122,8 @@ export const SideBar: FC = () => {
   };
 
   const onMove = async (from: string, pathTo: string) => {
-    const name = pathExt.basename(from);
-    const to = pathExt.join(pathTo, name);
+    const name = basename(from);
+    const to = join(pathTo, name);
     await copyFile(from, to);
     await removeFile(from);
   };
@@ -134,7 +132,7 @@ export const SideBar: FC = () => {
     const type = showAddItem;
 
     if (type === "file") {
-      const path = pathExt.join(directoryPath, name);
+      const path = join(directoryPath, name);
 
       await writeFile({
         contents: "",
@@ -144,7 +142,7 @@ export const SideBar: FC = () => {
     }
 
     if (type === "folder") {
-      await createDir(pathExt.join(directoryPath, name));
+      await createDir(join(directoryPath, name));
       set({ showAddItem: false });
     }
   };
@@ -161,8 +159,8 @@ export const SideBar: FC = () => {
   };
 
   const onRename = async (name: string, path: string) => {
-    const newPath = pathExt.join(pathExt.dirname(path), name);
-    await renameFile(path, pathExt.join(pathExt.dirname(path), name));
+    const newPath = join(dirname(path), name);
+    await renameFile(path, join(dirname(path), name));
     // update present selected document
     if (filePaths.includes(path))
       set({
@@ -196,7 +194,7 @@ export const SideBar: FC = () => {
     accept: "file",
     drop: async (item: any) => {
       const path = item.id;
-      await onMove(path, pathExt.dirname(directoryPath));
+      await onMove(path, dirname(directoryPath));
     },
   });
 
@@ -220,13 +218,13 @@ export const SideBar: FC = () => {
               cursor: "pointer",
             }}
             onClick={() => {
-              set({ currentDirectoryPath: pathExt.dirname(directoryPath) });
+              set({ currentDirectoryPath: dirname(directoryPath) });
             }}
           >
             <FiArrowLeft />
           </div>
         )}
-        <div>{pathExt.basename(directoryPath)}</div>
+        <div>{basename(directoryPath)}</div>
         <div
           style={{
             position: "absolute",
@@ -234,7 +232,7 @@ export const SideBar: FC = () => {
             cursor: "pointer",
           }}
           onClick={() => {
-            set({ currentDirectoryPath: pathExt.dirname(directoryPath) });
+            set({ currentDirectoryPath: dirname(directoryPath) });
           }}
         >
           <Menu>

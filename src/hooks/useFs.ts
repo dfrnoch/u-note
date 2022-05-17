@@ -11,14 +11,16 @@ export const useFs = () => {
       multiple: false,
       directory: true,
     })) as string;
+    console.log(path);
     set({ currentProjectPath: path, currentDirectoryPath: path });
   };
-  
+
   const openFile = async () => {
     const path = (await open({
       multiple: false,
       defaultPath: currentDirectoryPath,
     })) as string;
+    console.log(path);
     set({ currentFilePaths: [path] });
   };
 

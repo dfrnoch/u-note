@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import CodeEditor from "@uiw/react-textarea-code-editor";
-import * as pathExt from "path";
+import { extname } from "../utils";
 import { useStore } from "../hooks/store";
 
 type EditorProps = {
@@ -11,8 +11,7 @@ type EditorProps = {
 
 export const Editor: FC<EditorProps> = ({ onSave, initialValue = "" }) => {
   const filePaths = useStore((s) => s.currentFilePaths);
-  const ext = pathExt.extname(filePaths[0]).slice(1);
-  console.log(ext);
+  const ext = extname(filePaths[0]);
 
   const [state, setState] = useState(initialValue);
 
@@ -31,7 +30,7 @@ export const Editor: FC<EditorProps> = ({ onSave, initialValue = "" }) => {
   return (
     <CodeEditor
       value={initialValue}
-      language="js"
+      language={ext}
       placeholder="Please enter JS code."
       onChange={(evn) => setState(evn.target.value)}
       padding={15}
