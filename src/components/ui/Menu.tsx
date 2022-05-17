@@ -28,12 +28,12 @@ export const Item = styled(DropdownMenu.Item, {
 
   "&:focus": {
     outline: "none",
-    backgroundColor: "#white",
     color: "white",
   },
 });
 
 export const Menu: any = DropdownMenu.Root;
+
 export const Trigger = styled(DropdownMenu.Trigger, {
   cursor: "pointer",
   padding: 0,

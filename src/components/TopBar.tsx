@@ -15,7 +15,6 @@ import {
 import { WiMoonFull } from "react-icons/wi";
 import { styled } from "../theme";
 import { Content, Item, ItemIcon, Menu, Trigger } from "./ui/Menu";
-import { Tooltip } from "./ui/Tooltip";
 
 const TopBarContainer = styled("div", {
   fontFamily: "Montserrat",
@@ -59,6 +58,7 @@ export const TopBar: FC = () => {
 
   let title = "Codio";
   //remove window borders
+  // improve: implement in backend
   appWindow.setDecorations(false);
 
   return (
@@ -74,9 +74,7 @@ export const TopBar: FC = () => {
 
         <Menu>
           <Trigger>
-            <Tooltip label="Open Menu">
-              <TopIconLeft as={AiOutlineMenu} />{" "}
-            </Tooltip>
+            <TopIconLeft as={AiOutlineMenu} />{" "}
           </Trigger>
           <Content sideOffset={10}>
             <Item onSelect={openFile}>
@@ -90,13 +88,11 @@ export const TopBar: FC = () => {
           </Content>
         </Menu>
 
-        <Tooltip label="Open Side Bar">
-          <TopIconLeft
-            as={FiSidebar}
-            onClick={() => set({ showSide: !showSide })}
-            style={{ opacity: showSide ? 1 : 0.3 }}
-          />
-        </Tooltip>
+        <TopIconLeft
+          as={FiSidebar}
+          onClick={() => set({ showSide: !showSide })}
+          style={{ opacity: showSide ? 1 : 0.3 }}
+        />
       </div>
       <div>{title}</div>
       <div
@@ -107,6 +103,7 @@ export const TopBar: FC = () => {
           as={VscInfo}
           onClick={() => set({ showInfo: !showInfo })}
         />
+
         {topbarStyle === "standard" && (
           <>
             <TopIconRight
