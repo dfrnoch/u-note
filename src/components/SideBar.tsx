@@ -35,7 +35,7 @@ const SideBarStyled = styled("div", {
   paddingTop: 30,
   height: "100%",
   backgroundColor: "#1a1a1a",
-  fontFamily: "Montserrat",
+  fontFamily: "sans-serif",
   boxSizing: "border-box",
   color: "white",
   animation: `.1s ${Side}`,

@@ -18,7 +18,7 @@ import { styled } from "../theme";
 import { Content, Item, ItemIcon, Menu, Trigger } from "./ui/Menu";
 
 const TopBarContainer = styled("div", {
-  fontFamily: "Montserrat",
+  fontFamily: "sans-serif",
   fontSize: 12,
   top: 0,
   left: 0,

@@ -1,5 +1,12 @@
 # todo
 
-- rename issue (FileItem.tsx)
-- fix editor
-- info (mby html preview?)
+
+- [x] rename issue (FileItem.tsx)
+- [x] fix editor
+- [x] Earth (Orbit/Moon)
+- [x] Mars
+- [-] info (mby html preview?)
+- [ ] Saturn
+- [ ] Uranus
+- [ ] Neptune
+- [ ] Comet Haley

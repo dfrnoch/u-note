@@ -8,6 +8,7 @@ import { TopBar } from "./components/TopBar";
 import { FileOrfolder } from "./components/FileOrfolder";
 import { Separator } from "./components/Separator";
 
+
 const globalStyles = globalCss(reset);
 const globalStylesExtension = globalCss({
   body: {

@@ -58,7 +58,7 @@ const FileStyled = styled("div", {
 });
 
 const NameInput = styled("input", {
-  fontFamily: "Montserrat",
+  fontFamily: "sans-serif",
   margin: 0,
   borderRadius: 0,
   border: "1px solid #101010",
