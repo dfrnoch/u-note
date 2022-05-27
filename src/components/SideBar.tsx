@@ -130,7 +130,7 @@ export const SideBar: FC = () => {
     const type = showAddItem;
 
     if (type === "file") {
-      const path = join(directoryPath, name);
+      const path = join(directoryPath, name + ".note");
 
       await writeFile({
         contents: "",
