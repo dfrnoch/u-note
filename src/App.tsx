@@ -7,9 +7,6 @@ import { globalCss, styled } from "./theme";
 import { TopBar } from "./components/TopBar";
 import { FileOrfolder } from "./components/FileOrfolder";
 import { Separator } from "./components/Separator";
-import "@fontsource/montserrat";
-import "@fontsource/merriweather/latin-300.css";
-import "@fontsource/inconsolata";
 
 const globalStyles = globalCss(reset);
 const globalStylesExtension = globalCss({
