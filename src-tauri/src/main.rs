@@ -33,6 +33,9 @@ enum FsElement {
     Directory(Directory),
 }
 
+//This function reads the contents of the directory, and for each file or
+//directory in the directory, it returns an FsElement enum variant representing
+//the file or directory.
 #[tauri::command]
 async fn list_dir_files(path: String) -> Vec<FsElement> {
     let paths = fs::read_dir(path).unwrap();
@@ -81,6 +84,8 @@ async fn list_dir_files(path: String) -> Vec<FsElement> {
     files
 }
 
+//Lists all paths recursively, and returns a vector containing them
+//If deep == false, only lists files in the current folder
 fn list_path(path: String, deep: bool) -> Vec<String> {
     let paths = fs::read_dir(path).unwrap();
     let mut all_path = vec![];
@@ -127,6 +132,7 @@ async fn open_file(path: String) -> File {
 }
 struct Watch(Mutex<RecommendedWatcher>);
 
+//Set watcher for given directory
 #[tauri::command]
 async fn watch(path: String, watcher: State<'_, Watch>) -> Result<(), ()> {
     println!("Watching {}", &path);
@@ -142,7 +148,7 @@ async fn watch(path: String, watcher: State<'_, Watch>) -> Result<(), ()> {
 
     Ok(())
 }
-
+//Stop watcher for given directory
 #[tauri::command]
 async fn unwatch(path: String, watcher: State<'_, Watch>) -> Result<(), ()> {
     println!("Stop watching {}", &path);
@@ -172,12 +178,14 @@ fn check_path(path: String) -> String {
     return path_buf.to_str().unwrap().to_string();
 }
 
+//Main script
 fn main() -> notify::Result<()> {
     tauri::Builder::default()
         .setup(|app| {
             // attach the notify watcher to the app
             let handle = app.handle();
 
+            //Setup watcher
             let w =
                 notify::recommended_watcher(move |res: Result<notify::Event, notify::Error>| {
                     match res {
