@@ -24,7 +24,7 @@ type EditorProps = {
 export const TextEditor: FC<EditorProps> = ({ onSave, initialValue = "" }) => {
   let value = initialValue;
 
-  //Quill.js opotions and modules
+  //Quill.js options and modules
   var options = {
     toolbar: [
       [{ header: [1, 2, 3, 4, false] }],
