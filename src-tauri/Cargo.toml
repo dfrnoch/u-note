@@ -1,6 +1,6 @@
 [package]
 name = "unote"
-version = "1.0.0"
+version = "1.1.0"
 description = "Fast and easy text editor"
 authors = ["lynx"]
 license = "MIT"

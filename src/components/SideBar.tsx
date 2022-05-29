@@ -18,7 +18,7 @@ import { VscAdd, VscFile, VscFiles } from "react-icons/vsc";
 import { keyframes, styled } from "../theme";
 import { FsElement } from "types";
 import { useDebouncedCallback } from "use-debounce";
-import { orderWith, basename, join, dirname } from "../utils";
+import { orderWith, basename, join, dirname, removeTags } from "../utils";
 import { DraggableList } from "./DraggableList";
 import { FileItem } from "./FileItem";
 import { Content, Item, ItemIcon, Menu, Trigger } from "./ui/Menu";
@@ -271,7 +271,7 @@ export const SideBar: FC = () => {
                   name={Directory?.name || File.name || ""}
                   description={
                     !!File
-                      ? File?.preview?.slice(0, 100)
+                      ? removeTags(File?.preview?.slice(0, 100))
                       : `${Directory?.children_count} items`
                   }
                   selected={

@@ -35,3 +35,8 @@ export const dirname = (path: string) => {
   }
   return path;
 };
+
+//regex for removing tags in file preview
+export const removeTags = (text: string) => {
+  return text.replace(/<[^>]*>/g, "");
+};
