@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/67194087/207925298-20995788-edcd-4143-835b-0b4f8a0b4b5d.png)
+
 # uNote
 
 uNote is a free and open source note taking app that is fast, simple and reliable. It is built on top of the [Tauri](https://tauri.studio/) framework and uses [React](https://reactjs.org/) for the frontend and [Rust](https://www.rust-lang.org/) for the backend. 
